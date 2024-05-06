@@ -59,7 +59,7 @@ let auth0 = null;
     auth0 = await createAuth0Client({
       domain: 'dev-ojiyy6rg7t20dow4.us.auth0.com',
       client_id: 'C3SGp6iJ7pRqxKAK4Aj8ojJWEKlB3zw6',
-      redirect_uri: 'http://matteocerami773.github.io/mhw3/callback'
+      redirect_uri: 'http://localhost:3000/mhw3.html/callback'
     });
 
     //Gestisce la risposta di callback
@@ -92,7 +92,7 @@ let auth0 = null;
 
   const logout = () => {
     auth0.logout({
-      returnTo: 'http://matteocerami773.github.io/mhw3'
+      returnTo: 'http://localhost:3000/mhw3.html'
     });
   };
 
