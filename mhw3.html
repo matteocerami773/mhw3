@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width", initial-scale="1.0">
+<title> IKEA Italia </title>
+<link rel="stylesheet" href="mhw3.css">
+<script src="https://cdn.auth0.com/js/auth0-spa-js/1.13/auth0-spa-js.production.js"></script>
+<script src="mhw3.js" defer></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCz8gnMhIV1Jpt33RHAC6mMCwa9bpPowNY&callback=initMap"></script>
+</head>
+
+<body>
+    
+    <header>
+        <div class="wrapper">
+            <div class="wrapper-content">
+               <a class="link1" href="">Ricevi i tuoi piccoli acquisti gratis. Valido fino al 14 aprile, per ordini superiori a €59 e con peso fino a 30 kg.</a> 
+            </div>
+        </div>
+
+        <div class="searchbar">
+        <img class="icon2" src="im2/ikea-logo.svg">
+            <img src="im2/search.svg">
+            <input type="text"></input>
+            <img src="im2/user.svg">
+            <img src="im2/favorite.svg">
+            <img src="im2/shoppingbag.svg">
+            <button onclick="login()">Log In</button>
+            <button onclick="logout()">Log Out</button>
+            <img id="menuBtn" src="im2/menubar.svg">
+        </div>
+
+        <div id="sidebar" class="hidden">
+            <h3>Acquista i prodotti:</h3>
+            <ul>
+                <li><a href="#">Mobili</a></li>
+                <li><a href="#">Cucine ed elettrodomestici</a></li>
+                <li><a href="#">Mobili e soluzioni per bagno</a></li>
+                <li><a href="#">Mobili e accessori per bambini</a></li>
+                <li><a href="#">Tessili</a></li>
+                <li><a href="#">Decorazioni casa</a></li>
+                <li><a href="#">Illuminazione</a></li>
+                <li><a href="#">Articoli per la tavola e la cucina</a></li>
+                <li><a href="#">Letti e materassi</a></li>
+            </ul>
+        </div>
+
+        
+        <div class="line2">
+        <img src="im2/transport.svg">
+        <span class="s1">Inserisci il codice postale </span>
+        <img src="im2/store.svg">
+        <span class="s1">Seleziona il negozio</span>
+        </div>
+
+        <div class="line3">
+        <a class="s1" href="">Temi</a>
+        </div>
+
+    </header>
+
+
+   
+
+
+    <section>
+        <h1 class="page">Accessori per la tua casa</h1>
+        <p class="txt">
+            Quando gli spazi sono freschi e progettati pensando al benessere, il tempo che vi trascorriamo si carica di significato.
+             Celebra l'arrivo della nuova stagione in IKEA con piccoli e grandi cambiamenti, grazie ad accessori per la casa in linea
+             con lo stile scandinavo moderno e tradizionale, soluzioni per esporre gli oggetti che ami, luci calde, tessuti vistosi e cuscini con 
+             stampe che porteranno un tocco di novità in ogni stanza.
+        </p>
+
+        <h3 class="page2">Approfitta della consegna gratuita per i pacchi leggeri</h3>
+        <p class="txt">I servizi di Consegna Pacchi Leggeri e ritiro presso i Punti di ritiro Uffici Postali o Punto
+         Poste sono gratuiti per acquisti online e in negozio superiori a €59. 
+         Operazione a premio valida dall’11 marzo al 14 aprile 2024.
+        </p>
+
+        <h3 class="page2"> Visualizza i negozi IKEA in tutta Italia: </h3>
+        <div id="map"></div>
+    </section>
+
+    <div class="box">
+        <img id="change" class="im1" src="im2/1.jpeg">
+        <div class="sub-box">
+        <img class="im2" src="im2/2.jpeg">
+        <img class="im3" src="im2/3.jpeg">
+        </div>
+        <div class="sub-box">
+        <img class="im3" src="im2/4.jpeg">
+        <img class="im2" src="im2/5.jpeg">
+        </div>
+        
+    </div> 
+    <a class="s2" href="">Leggi il regolamento</a>
+
+    <section class="b">
+        <h3 class="page2">Adesso in IKEA</h3>
+        <div class="tend1">
+            <img class="sc" src="im2/sottocosto.jpeg">
+            <img class="sc" src="im2/trmob.jpeg">  
+            <img class="sc" src="im2/family.jpeg">          
+        </div>
+
+        <div class="crs">
+        <div class="bl1">
+            <h3 class="page2"><a href="">Scopri i prodotti in Sottocosto
+            </a>
+            <p class="txt2">Dal 15 al 24 marzo 2024 approfitta del sottocosto IKEA. Tanti articoli in offerta per arredare la tua casa.</p>
+            </h3>
+            <img class="arrow" src="im2/arrdx.svg">
+        </div>
+
+        <div class="bl2">
+            <h3 class="page2"><a class="w" href="">Approfitta del servizio Riporta e Rivendi
+            </a>
+            <p class="txt3">Dal 15 al 24 marzo 2024 approfitta del sottocosto IKEA. Tanti articoli in offerta per arredare la tua casa.</p>
+            </h3>
+            <img class="arrow" src="im2/arrdx.svg">
+        </p></div>
+
+
+        <div class="bl3">
+            <h3 class="page2"><a class="w" href="">Mangiare in IKEA conviene sempre, il venerdì di più
+            </a>
+            <p class="txt3">Ogni Gustoso Venerdì i piatti più amati sono a metà prezzo. Vieni al Ristorante IKEA e gustati una selezione di secondi piatti al 50% di sconto. La promozione è valida tutti i venerdì dal 1 marzo al 26 aprile 2024, per i soci IKEA Family.</p>
+            </h3>
+            <img class="arrow" src="im2/arrdx.svg">
+        </div>
+        </div>
+    </section>
+
+    <button id="readMoreBtn">Scopri di più</button>
+    <p id='extra' class="hidden"> Abbiamo abbassato i prezzi di migliaia di prodotti: Approfitta di questi nuovi prezzi e scopri i prodotti che fanno parte dell'ampia scelta disponibile.</p>
+    
+
+
+    <h3 class="page2">I prodotti che amate ad un prezzo più basso</h3>
+    <div class="car2">
+        <img class="i1" src="im2/nppb.jpeg">
+        <img class="i2" src="im2/pillow.jpeg">
+        <img class="i2" src="im2/kitchen.jpeg">
+    </div>
+
+    <h3 class="page2">Una casa per le tue piante</h3>
+    <p class="txt">Fai fiorire il tuo amore per le piante con lo scaffale HYLLIS. È la soluzione perfetta per piccoli spazi in casa o all'esterno e ti aiuterà a coltivare squisiti ortaggi da usare in cucina.</p>
+
+    <div class="box">
+        <div class="sub-box">
+        <img class="im2" src="im2/sh1.jpeg">
+        <img class="im3" src="im2/sh2.jpeg">
+        </div>
+        <div class="sub-box">
+        <img class="im3" src="im2/sh3.jpeg">
+        <img class="im2" src="im2/sh4.jpeg">
+        </div>
+
+    <p class="txt"> <a class="findmore" href=""> Scopri i contenitori e gli scaffali da esterno</a></p>    
+    <h3 class="page2">Servizi IKEA</h3>
+
+    <div class="car2">
+        <img class="i1" src="im2/srv1.avif">
+        <img class="i2" src="im2/srv2.avif">
+        <img class="i2" src="im2/srv3.avif">
+    </div>
+
+    <h3 class="page2">Offerta finanziamento</h3>
+    <p class="txt">Approfitta del nostro finanziamento <strong> Tasso zero mobili </strong> e <br>
+         realizza subito il bagno dei tuoi sogni, in comode rate.</p>
+    <div class="dbl">
+     <img class="tax" src="im2/tax.avif">
+      <img class="wall" src="im2/wall.avif">
+    </div>
+
+    <h3 class="page2">Suggerimenti e idee per vivere la casa in modo più consapevole.</h3>
+    <div class="car2">
+        <img class="i1" src="im2/house.avif">
+        <img class="i2" src="im2/turn.avif">
+        <img class="i2" src="im2/trash.avif">
+    </div>
+
+    <h3 class="page2">Crea l'atmosfera</h3>
+    <p class="txt">Idee basate sui prodotti visti di recente</p>
+    <div class="car3">
+        <img src="im2/barbecue.avif">
+        <img src="im2/people.avif">
+        <img src="im2/socks.avif">
+    </div>
+
+    <h3 class="page2">Informazioni importanti</h3>
+    <div class="tend1">
+        <img class="sc" src="im2/comics.avif">
+        <img class="sc" src="im2/charger.avif">  
+        <img class="sc" src="im2/woman.avif">          
+    </div>
+
+    <div class="crs">
+    <div class="blk">
+        <h3 class="page2"><a href="">Misure di sicurezza
+
+        </a>
+        <p class="txt2">La tua salute e sicurezza sono la nostra priorità.</p>
+        </h3>
+        <img class="arrow" src="im2/arrdx.svg">
+    </div>
+
+    <div class="blk">
+        <h3 class="page2"><a href="">Richiamo prodotti dal mercato
+        </a>
+        <p class="txt2">Avvisi importanti e ritiri dal mercato relativi a prodotti IKEA
+        </p>
+        </h3>
+        <img class="arrow" src="im2/arrdx.svg">
+    </p></div>
+
+
+    <div class="blk">
+        <h3 class="page2"><a href="">Fissa i mobili alla parete
+        </a>
+        <p class="txt2">Insieme, per una casa più sicura</p>
+        </h3>
+        <img class="arrow" src="im2/arrdx.svg">
+    </div>
+    </div>
+
+    <p class="txt4">Vogliamo migliorare la tua vita quotidiana in casa con tanti prodotti adatti a ogni stanza. <br>
+         I nostri mobili e accessori sono belli e funzionali, pensati per aiutarti a personalizzare la casa e <br>
+         rendere unici gli ambienti: dal soggiorno alla camera da letto, dalla cucina agli spazi esterni. <br>
+        Scopri i nostri letti matrimoniali, confortevoli e resistenti, regalati notti tranquille e fai <br>
+        il pieno di energia per iniziare le tue giornate al meglio. E trova il divano che più ti piace per creare <br>
+         un soggiorno esclusivo dove riposarti e concederti dei momenti di relax. Hai bisogno di un aiuto per progettare <br>
+        e realizzare una soluzione per un ambiente di casa? Scegli il servizio 
+         più adatto alle tue esigenze e prenota un <br> appuntamento con uno dei nostri esperti, in negozio o direttamente da casa.</p>
+
+
+    <p class="txt4">
+        Siamo a conoscenza che sta circolando un messaggio via WhatsApp con un <br>
+         buono di 250 euro che può essere speso in IKEA. IKEA Italia è totalmente <br>
+          estranea a questa comunicazione e abbiamo attivato le autorità competenti al <br>
+           fine di tutelare i clienti e il nostro brand. 
+    </p>
+    
+    
+<footer>
+<div class="dsp">   
+<div class="footerblk">
+    © Inter IKEA Systems B.V. 1999-2024
+
+Condizioni di vendita
+ 
+Privacy policy
+ 
+Informativa sui Cookies
+ 
+Impostazione dei Cookie
+ 
+Responsible disclosure
+ 
+Modello 231
+ 
+Whistleblowing - Segnala una preoccupazione
+TASSO ZERO: Fino a 30 mesi ‐ prima rata a 30 giorni ‐ importo finanziabile da € 49 a € 15.000. Esempio: € 1500.00 (importo totale del credito) in 10 rate da € 150 ‐ TAN fisso 0% TAEG 0%. Il TAEG rappresenta il costo totale del credito espresso in percentuale annua ‐ importo totale dovuto € 1.500.00. Tan e Taeg sono diversi da zero esclusivamente per effetto di arrotondamento decimale. Offerta valida dal 05/03/2024 al 02/07/2024. Messaggio pubblicitario con finalità promozionale. Per le informazioni precontrattuali richiedere sul punto vendita il documento “Informazioni europee di base sul credito ai consumatori” (SECCI) e copia del testo contrattuale. Salvo approvazione della finanziaria per cui IKEA opera come intermediario del credito non in esclusiva.
+
+ACQUISTA ORA PAGA IN PIÙ RATE (CUCINE): Fino a 60 mesi importo finanziabile da €1.500 a €15.000. Prima rata a 30 giorni - Esempio: €5.000 (importo totale del credito) in 60 rate da € 89,88 - TAN fisso 3,02% TAEG 3,06%. Il TAEG rappresenta il costo totale del credito espresso in percentuale annua ed include solo gli interessi. Tutti i costi azzerati - Importo totale dovuto € 5,392,80. Offerta valida dal 05/03/2023 al 31/08/2024. Messaggio pubblicitario con finalità promozionale. Per le informazioni precontrattuali richiedere sul punto vendita il documento “Informazioni europee di base sul credito ai consumatori” (SECCI) e copia del testo contrattuale. Salvo approvazione della finanziaria per cui IKEA opera come intermediario del credito non in esclusiva.
+
+ACQUISTA ORA PAGA IN Più RATE (MOBILI): Fino a 40 mesi importo finanziabile da €801 a €10.000. Prima rata a 30 giorni - Esempio: €2.000 (importo totale del credito) in 40 rate da € 52,63 - TAN fisso 3,03% TAEG 3,08%. Il TAEG rappresenta il costo totale del credito espresso in percentuale annua ed include solo gli interessi. Tutti i costi azzerati – Importo totale dovuto € 2.105,20. Offerta valida dal 05/03/2024 al 02/07/2024. Messaggio pubblicitario con finalità promozionale. Per le informazioni precontrattuali richiedere sul punto vendita il documento “Informazionieuropee di base sul credito ai consumatori” (SECCI) e copia del testo contrattuale. Salvo approvazione della finanziaria per cui IKEA opera come intermediario del credito non in esclusiva.
+</div>
+</div>
+</footer>
+
+
+</body>
+</html>
